@@ -1,77 +1,26 @@
-:root {
-  --borderWidths-outlineButton: 1px;
-  --colors-accountItemsContainer: hsla(225, 17%, 18%, 1);
-  --colors-accountItemNotificationSuccess: hsl(150, 63%, 63%);
-  --colors-accountItemNotificationWarning: hsl(37.2, 100%, 62.4%);
-  --colors-background: hsl(180, 50%, 10%); /* 어두운 에메랄드 색조 */
-  --colors-bodyBackground: var(--colors-background); /* 기본 배경색으로 설정 */
-  --colors-billingToggleBackground: var(--colors-sectionHeaderBackground);
-  --colors-badgeBackground: hsl(150, 63%, 63%);
-  --colors-badgeAuroraBackground: linear-gradient(
-    90deg,
-    hsl(184.76deg 94.17% 41.84%) 0%,
-    hsl(184.79deg 95.2% 50.98%) 60%,
-    hsl(185.26deg 58.3% 54.5%) 100%
-  );
-  --colors-badgePrimaryText: hsl(0, 0%, 0%);
-  --colors-badgeGradientText: hsl(0, 0%, 0%);
-  --colors-bannerBackgroundInfo: hsl(208, 100%, 20%);
-  --colors-bannerBackgroundError: hsl(2, 91%, 18%);
-  --colors-bannerBackgroundWarning: hsl(37, 60%, 24%);
-  --colors-bannerBackgroundSuccess: hsl(150, 73%, 19%);
-  --colors-bannerBorder: 1px solid var(--colors-dialogTextSecondary);
-  --colors-breadcrumbLink: var(--colors-link);
-  --colors-buttonDestructiveBackground: hsl(3, 80%, 44%);
-  --colors-buttonDestructiveBackgroundActive: hsl(3, 85%, 26%);
-  --colors-buttonDestructiveBackgroundDisabled: hsl(3, 85%, 22%);
-  --colors-buttonDestructiveBackgroundHover: hsl(3, 100%, 60%);
-  --colors-buttonDestructiveText: white;
-  --colors-buttonDestructiveTextDisabled: lightgray;
-  --colors-buttonFooter: hsl(0, 0%, 75%);
-  --colors-buttonFooterHover: hsl(0, 0%, 100%);
-  --colors-buttonOutlineBackground: transparent;
-  --colors-buttonOutlineBackgroundActive: hsla(0, 0%, 97.6%, 0.2);
-  --colors-buttonOutlineBackgroundDisabled: hsla(0, 0%, 0%, 0.3);
-  --colors-buttonOutlineBackgroundHover: hsla(0, 0%, 97.6%, 0.8);
-  --colors-buttonOutlineBorder: hsl(0, 0%, 97.6%);
-  --colors-buttonOutlineBorderDisabled: transparent;
-  --colors-buttonOutlineBorderHover: transparent;
-  --colors-buttonOutlineText: hsl(0, 0%, 97.6%);
-  --colors-buttonOutlineTextDisabled: hsla(0, 0%, 79.2%, 0.4);
-  --colors-buttonPrimaryBackground: hsl(207.4, 100%, 41.2%);
-  --colors-buttonPrimaryBackgroundActive: hsl(199, 100%, 35%);
-  --colors-buttonPrimaryBackgroundDisabled: hsl(207.4, 100%, 21%);
-  --colors-buttonPrimaryBackgroundHover: hsl(207.4, 100%, 47.1%);
-  --colors-buttonPrimaryText: hsl(0, 0%, 97.6%);
-  --colors-buttonPrimaryTextDisabled: hsla(0, 0%, 97.6%, 0.5);
-  --colors-buttonSecondaryBackdropFilter: blur(20px);
-  --colors-buttonSecondaryBackground: hsla(0, 0%, 97.6%, 20%);
-  --colors-buttonSecondaryBackgroundActive: hsla(0, 0%, 97.6%, 50%);
-  --colors-buttonSecondaryBackgroundDisabled: hsla(0, 0%, 0%, 0.4);
-  --colors-buttonSecondaryBackgroundHover: hsla(0, 0%, 97.6%, 40%);
-  --colors-buttonSecondaryText: hsl(0, 0%, 97.6%);
-  --colors-buttonSecondaryTextDisabled: hsla(0, 0%, 100%, 0.5);
-  --colors-buttonTransparentText: hsl(0, 0%, 97.6%);
-  --colors-buttonTransparentTextDisabled: hsl(0, 0%, 79.2%);
-}
-
 body {
   display: flex;
+  flex-direction: column; /* Stack items vertically */
+  justify-content: flex-start; /* Align items at the top */
   background: linear-gradient(to bottom right, #005f5f, #002b2b);
-  height: 100vh; /* 전체 화면을 채우기 위해 높이를 100vh로 설정 */
-  margin: 0; /* 기본 여백 제거 */
-  display: flex; /* Flexbox 사용 */
-  justify-content: center; /* 가로 방향 중앙 정렬 */
-  /* align-items: center; 세로 방향 중앙 정렬 */
-  padding-bottom: 100px;
+  height: 100vh;
+  margin: 0;
 }
 
 .disney-plus-logo {
   width: 100%;
   flex-grow: 1;
   display: flex; /* Flexbox 사용 */
-  margin-top: 50px;
+  margin-top: 30px;
   justify-content: center; /* 가로 방향 중앙 정렬 */
+}
+
+main {
+  flex-grow: 1; /* Take up remaining space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .container {
   margin-top: 0px;
@@ -83,6 +32,7 @@ body {
   background-color: white;
   padding: 56px 72px;
   box-sizing: border-box; /* 패딩 및 테두리 포함한 전체 너비/높이 계산 */
+  margin-bottom: 180px;
 }
 
 .second_logo {
@@ -153,28 +103,29 @@ body {
 .p3 {
   font-size: 12px;
 }
+
 footer {
   background-color: #f0f0f0;
-  display: block;
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   width: 100%;
-  padding: 20px; /* 패딩을 추가하여 높이가 자동으로 조정되도록 함 */
-  box-sizing: border-box; /* 패딩을 포함한 전체 크기를 계산 */
+  padding: 20px;
+  box-sizing: border-box;
   z-index: 1000;
+  margin-top: auto; /* Push footer to the bottom */
 }
-
 .footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   width: 100%;
-  padding: 20px 40px;
+  padding: 10px 20px;
 }
 
 .footer1 {
-  min-width: 80px; /* 최소 너비 */
+  min-width: 80px;
   height: 30px;
   display: flex;
   margin: 10px;
