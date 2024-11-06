@@ -11,72 +11,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <style>
-      body {
-        background: radial-gradient(circle, #001020 50%, #01152b);
-        color: white; /* 대비를 위한 텍스트 색상 */
-      }
-      .nav {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        background-color: #020118; /* 원하는 배경색 */
-        z-index: 1000; /* 다른 요소 위로 표시되도록 설정 */
-        padding: 0px 20px; /* 위아래 여백 */
-        height: 72px;
-        align-items: center;
-        display: flex;
-      }
-      svg {
-        margin-top: 14px;
-        margin-right: 30px;
-      }
-      i {
-        font-size: 0.8em;
-        color: white;
-        margin-right: 4px;
-        margin-left: 4px;
-      }
-      .icons {
-        display: flex;
-        gap: 20px;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .icons a {
-        display: inline-flex;
-        text-decoration: none; /* 기본 밑줄 제거 */
-        color: inherit; /* 텍스트 색상 상속 */
-        position: relative; /* ::after를 사용하기 위해 필요 */
-        padding: 0 0 0 0;
-        justify-content: center;
-        display: flex;
-        align-items: center;
-        width: 20px;
-      }
-
-      .icons a::after {
-        content: "";
-        position: absolute;
-        left: -2px;
-        right: 0;
-        height: 2px; /* 밑줄 두께 */
-        background-color: white; /* 밑줄 색상 */
-        transform: scaleX(0); /* 초기 상태에서 밑줄 숨기기 */
-        transform-origin: bottom right; /* 밑줄이 오른쪽에서 왼쪽으로 확장되도록 */
-        transition: transform 0.3s ease; /* 애니메이션 효과 */
-        bottom: -10px;
-      }
-
-      .icons a:hover::after {
-        transform: scaleX(1); /* hover 시 밑줄 확장 */
-        transform-origin: bottom left; /* 밑줄이 왼쪽에서 오른쪽으로 확장되도록 */
-        bottom: -10px;
-      }
-    </style>
+    <link rel="stylesheet" href="./css/styleMain.css" />
   </head>
   <body>
     <div class="nav">
@@ -134,6 +69,9 @@
         <a href="#"><i class="fa-solid fa-video"></i></a>
         <a href="#"><i class="fa-solid fa-tv"></i></a>
         <a href="#"><i class="fa-solid fa-star"></i></a>
+      </div>
+      <div class="user">
+        <img src="./images/로고/호머.PNG" />
       </div>
     </div>
     <main></main>
