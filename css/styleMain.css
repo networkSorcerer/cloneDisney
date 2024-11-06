@@ -66,3 +66,9 @@ i {
   position: fixed;
   right: 0;
 }
+
+img {
+  border-radius: 50%; /* 이미지를 원형으로 만들기 */
+  object-fit: cover; /* 이미지가 잘리거나 왜곡되지 않게 */
+  margin-right: 10px;
+}
