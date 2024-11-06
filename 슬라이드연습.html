@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: yellowgreen;
+      }
+      .slider-container {
+        position: relative;
+        width: 300px; /* 슬라이더의 너비 */
+        height: 200px; /* 슬라이더의 높이 */
+        overflow: hidden; /* 넘치는 부분 숨기기 */
+      }
+
+      .slider {
+        display: flex;
+        transition: transform 0.5s ease; /* 이미지 슬라이드 애니메이션 */
+      }
+
+      .slider img {
+        width: 100%;
+        height: auto;
+      }
+
+      .dots {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+      }
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: white;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .dot.active {
+        background-color: #333; /* 선택된 점 색 */
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const images = document.querySelectorAll(".slider img");
+        const slider = document.querySelector(".slider");
+        const dotsContainer = document.querySelector(".dots");
+
+        let currentIndex = 0;
+
+        // 점 추가
+        images.forEach((_, index) => {
+          const dot = document.createElement("span");
+          dot.classList.add("dot");
+          dot.dataset.index = index;
+          dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll(".dot");
+
+        // 이미지 슬라이더 업데이트
+        function updateSlider(index) {
+          // 슬라이더의 transform을 이미지에 맞게 설정
+          slider.style.transform = `translateX(-${index * 100}%)`;
+
+          // 점(active) 업데이트
+          dots.forEach((dot) => dot.classList.remove("active"));
+          dots[index].classList.add("active");
+        }
+
+        // 점 클릭 시 이미지 변경
+        dots.forEach((dot) => {
+          dot.addEventListener("click", (e) => {
+            const index = parseInt(e.target.dataset.index);
+            currentIndex = index;
+            updateSlider(currentIndex);
+          });
+        });
+
+        // 초기 상태 설정
+        updateSlider(currentIndex);
+      });
+    </script>
+  </head>
+  <body>
+    <div class="slider-container">
+      <div class="slider">
+        <img src="./images/울데커플.jpg" alt="Image 1" />
+        <img src="./images/울데커플2.jpg" alt="Image 2" />
+        <img src="./images/울데커플3.jpg" alt="Image 3" />
+      </div>
+      <div class="dots">
+        <!-- 점은 자바스크립트로 동적으로 추가됩니다. -->
+      </div>
+    </div>
+  </body>
+</html>
