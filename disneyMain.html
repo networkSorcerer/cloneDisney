@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>짭지니 메인</title>
+    <!-- transform scale 사용 권장  -->
+    <!-- 이미지 슬라이드, hover 영상, footer, 메뉴창 -->
+    <link rel="icon" href="./images/로고/파비콘.png" type="image/x-icon" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -12,6 +15,42 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="./css/styleMain.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".slide");
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+          const slideWidth = slides[0].clientWidth;
+          document.querySelector(
+            ".slide-container"
+          ).style.transform = `translateX(${-index * slideWidth}px)`;
+        }
+
+        function nextSlide() {
+          currentSlide = (currentSlide + 1) % totalSlides; // 마지막 슬라이드에서 첫 번째 슬라이드로 이동
+          showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+          currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; // 첫 번째 슬라이드에서 마지막 슬라이드로 이동
+          showSlide(currentSlide);
+        }
+        function updateSlidePosition() {
+          const offset = -currentIndex * 300; // 100%씩 이동
+          slideContainer.style.transform = `translateX(${offset}%)`;
+        }
+
+        // 버튼에 이벤트 핸들러 추가
+        document
+          .querySelector(".arrow.left")
+          .addEventListener("click", prevSlide);
+        document
+          .querySelector(".arrow.right")
+          .addEventListener("click", nextSlide);
+      });
+    </script>
   </head>
   <body>
     <div class="nav">
@@ -63,17 +102,50 @@
         </svg>
       </div>
       <div class="icons">
-        <a href="#"><i class="fa-solid fa-house"></i></a>
-        <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-        <a href="#"><i class="fa-solid fa-plus"></i></a>
-        <a href="#"><i class="fa-solid fa-video"></i></a>
-        <a href="#"><i class="fa-solid fa-tv"></i></a>
-        <a href="#"><i class="fa-solid fa-star"></i></a>
+        <a href="#"><i class="fa-solid fa-house"></i><span>홈</span></a>
+        <a href="#"
+          ><i class="fa-solid fa-magnifying-glass"></i><span>검색</span></a
+        >
+        <a href="#"><i class="fa-solid fa-plus"></i><span>관심 콘텐츠</span></a>
+        <a href="#"><i class="fa-solid fa-video"></i><span>영화</span></a>
+        <a href="#"><i class="fa-solid fa-tv"></i><span>시리즈</span></a>
+        <a href="#"><i class="fa-solid fa-star"></i><span>오리지널</span></a>
       </div>
+
       <div class="user">
-        <img src="./images/로고/울데커플.jpg" width="50px" height="50px" />
+        <img
+          src="./images/로고/울데커플.jpg"
+          width="50px"
+          height="50px"
+          class="login_icon"
+        />
       </div>
     </div>
-    <main></main>
+    <main>
+      <div class="slider">
+        <button class="arrow left" onclick="prevSlide()">&#10094;</button>
+        <div class="slide-container">
+          <img src="./images/메인/메인1.PNG" class="slide" alt="Slide 1" />
+          <img src="./images/메인/메인2.PNG" class="slide" alt="Slide 2" />
+          <img src="./images/메인/메인3.PNG" class="slide" alt="Slide 3" />
+          <img src="./images/메인/메인4.PNG" class="slide" alt="Slide 4" />
+          <img src="./images/메인/메인5.PNG" class="slide" alt="Slide 5" />
+          <img src="./images/메인/메인6.PNG" class="slide" alt="Slide 6" />
+          <img src="./images/메인/메인7.PNG" class="slide" alt="Slide 7" />
+          <img src="./images/메인/메인8.PNG" class="slide" alt="Slide 8" />
+        </div>
+        <button class="arrow right" onclick="nextSlide()">&#10095;</button>
+      </div>
+
+      <div class="category">
+        <!-- 그리드 적용 -->
+      </div>
+      <div class="marble"></div>
+      <div class="disney"></div>
+      <div class="starwars"></div>
+      <div class="pixar"></div>
+      <div class="star"></div>
+      <div class="national"></div>
+    </main>
   </body>
 </html>

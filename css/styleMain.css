@@ -32,22 +32,10 @@ i {
   align-items: center;
 }
 
-.icons a {
-  display: inline-flex;
-  text-decoration: none; /* 기본 밑줄 제거 */
-  color: inherit; /* 텍스트 색상 상속 */
-  position: relative; /* ::after를 사용하기 위해 필요 */
-  padding: 0 0 0 0;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  width: 20px;
-}
-
 .icons a::after {
   content: "";
   position: absolute;
-  left: -2px;
+  left: 5px;
   right: 0;
   height: 2px; /* 밑줄 두께 */
   background-color: white; /* 밑줄 색상 */
@@ -57,18 +45,115 @@ i {
   bottom: -10px;
 }
 
-.icons a:hover::after {
-  transform: scaleX(1); /* hover 시 밑줄 확장 */
-  transform-origin: bottom left; /* 밑줄이 왼쪽에서 오른쪽으로 확장되도록 */
-  bottom: -10px;
-}
 .user {
   position: fixed;
   right: 0;
 }
 
-img {
-  border-radius: 50%; /* 이미지를 원형으로 만들기 */
-  object-fit: cover; /* 이미지가 잘리거나 왜곡되지 않게 */
-  margin-right: 10px;
+.login_icon {
+  border-radius: 50%; /* Make the image circular */
+  object-fit: cover; /* Ensure the image fills the container without stretching */
+  margin-right: 10px; /* Add some space to the right of the image */
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider {
+  position: relative;
+  width: 90vw;
+  margin-top: 72px;
+  display: flex;
+}
+
+.slide-container {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide:hover {
+  border: 2px solid white; /* 두께 2px, 스타일은 solid, 색상은 흰색 */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3); /* 마우스 오버 시 그림자 강하게 */
+  transform: scale(1.05); /* 이미지를 약간 확대 */
+}
+
+.slide {
+  width: calc(100% - 10px);
+  height: auto; /* 이미지 비율에 맞춰 자동으로 높이 조정 */
+  border: 2px solid rgba(255, 255, 255, 0.5); /* 흰색 테두리, 약간 흐릿한 효과 */
+  border-radius: 8px; /* 이미지 모서리를 둥글게 만듬 */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* 이미지에 그림자 추가 */
+  margin-right: 10px; /* 이미지들 사이에 간격 추가 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* 이미지에 마우스를 올렸을 때 부드러운 효과 */
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 3em;
+  color: #333;
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.left {
+  left: -70px;
+}
+.left:hover {
+  color: white;
+}
+.right {
+  right: -70px;
+  color: white;
+}
+
+.icons a {
+  white-space: nowrap; /*2줄로 나오던거 수정 */
+  display: inline-flex;
+  text-decoration: none; /* 기본 밑줄 제거 */
+  color: inherit; /* 텍스트 색상 상속 */
+  position: relative; /* ::after를 사용하기 위해 필요 */
+  padding: 0 0 0 0;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 14px;
+}
+
+/* 화면 크기가 520px 이하일 때 */
+@media (max-width: 520px) {
+  .icons {
+    gap: 5px; /* 아이콘 간격을 더 좁게 설정 */
+  }
+
+  .icons a {
+    max-width: 100px; /* 아이콘의 최대 너비 */
+  }
+}
+
+@media (max-width: 430px) {
+  .icons {
+    gap: 0; /* 아이콘 간격을 더 좁게 설정 */
+  }
+}
+/* 화면 크기가 790px 이하일 때 텍스트 생략 */
+@media (max-width: 790px) {
+  .icons a {
+    max-width: 120px; /* 최대 너비를 더 좁게 설정 */
+  }
+  .icons a span {
+    /* 텍스트 숨기기 */
+    display: none;
+  }
+}
+.icons a:hover::after {
+  transform: scaleX(1); /* hover 시 밑줄 확장 */
+  transform-origin: bottom left; /* 밑줄이 왼쪽에서 오른쪽으로 확장되도록 */
+  bottom: -10px;
 }

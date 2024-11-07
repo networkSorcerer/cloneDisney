@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이미지 슬라이드 예제</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+
+      .slider {
+        position: relative;
+        width: 80%;
+        max-width: 600px;
+        overflow: hidden;
+      }
+
+      .slide-container {
+        display: flex;
+        transition: transform 0.5s ease;
+      }
+
+      .slide {
+        min-width: 100%;
+        height: auto;
+      }
+
+      .arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2em;
+        color: #333;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        z-index: 1;
+      }
+
+      .left {
+        left: 10px;
+      }
+
+      .right {
+        right: 10px;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".slide");
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+          const slideWidth = slides[0].clientWidth;
+          document.querySelector(
+            ".slide-container"
+          ).style.transform = `translateX(${-index * slideWidth}px)`;
+        }
+
+        function nextSlide() {
+          currentSlide = (currentSlide + 1) % totalSlides; // 마지막 슬라이드에서 첫 번째 슬라이드로 이동
+          showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+          currentSlide = (currentSlide - 1 + totalSlides) % totalSlides; // 첫 번째 슬라이드에서 마지막 슬라이드로 이동
+          showSlide(currentSlide);
+        }
+
+        // 버튼에 이벤트 핸들러 추가
+        document
+          .querySelector(".arrow.left")
+          .addEventListener("click", prevSlide);
+        document
+          .querySelector(".arrow.right")
+          .addEventListener("click", nextSlide);
+      });
+    </script>
+  </head>
+  <body>
+    <div class="slider">
+      <button class="arrow left" onclick="prevSlide()">&#10094;</button>
+      <div class="slide-container">
+        <img src="./images/메인/메인1.PNG" class="slide" alt="Slide 1" />
+        <img src="./images/메인/메인2.PNG" class="slide" alt="Slide 2" />
+        <img src="./images/메인/메인3.PNG" class="slide" alt="Slide 3" />
+      </div>
+      <button class="arrow right" onclick="nextSlide()">&#10095;</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
