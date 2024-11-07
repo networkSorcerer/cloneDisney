@@ -255,3 +255,57 @@ source:hover {
 .category2 {
   margin-left: 50px;
 }
+
+/* 마블 아이콘 */
+.marvelSlider {
+  position: relative;
+  width: 100vw;
+  margin-bottom: 50px;
+}
+
+.slide-containerM {
+  display: flex;
+  transition: transform 0.5s ease;
+  margin-left: 50px;
+}
+
+.slideM {
+  width: 300px;
+  height: auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 1); /* 더 부드러운 음영 효과 */
+  border-radius: 25px;
+  padding: #001020 5px solid;
+}
+
+.arrowM {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1;
+}
+
+.leftM {
+  left: 10px;
+}
+
+.rightM {
+  right: 10px;
+}
+.leftM:hover {
+  color: white;
+}
+.slideM:hover {
+  border: 2px solid white; /* 두께 2px, 스타일은 solid, 색상은 흰색 */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 1); /* 마우스 오버 시 그림자 강하게 */
+  /* transform: scale(1.05); 이미지를 약간 확대 */
+}
+
+.category2 h2 {
+  margin-bottom: 10px; /* h2와 아래 div 사이의 간격을 10px로 설정 */
+}

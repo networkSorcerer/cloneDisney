@@ -49,6 +49,39 @@
         document
           .querySelector(".arrow.right")
           .addEventListener("click", nextSlide);
+
+        let currentSlideM = 0;
+        const slidesM = document.querySelectorAll(".slideM");
+        const totalSlidesM = slidesM.length;
+
+        function showSlide(index) {
+          const slideWidth = slidesM[0].clientWidth;
+          document.querySelector(
+            ".slide-containerM"
+          ).style.transform = `translateX(${-index * slideWidth}px)`;
+        }
+
+        function nextSlide() {
+          currentSlideM = (currentSlideM + 1) % totalSlides; // 마지막 슬라이드에서 첫 번째 슬라이드로 이동
+          showSlide(currentSlideM);
+        }
+
+        function prevSlide() {
+          currentSlideM = (currentSlideM - 1 + totalSlides) % totalSlides; // 첫 번째 슬라이드에서 마지막 슬라이드로 이동
+          showSlide(currentSlideM);
+        }
+        function updateSlidePosition() {
+          const offset = -currentIndex * 300; // 100%씩 이동
+          slideContainer.style.transform = `translateX(${offset}%)`;
+        }
+
+        // 버튼에 이벤트 핸들러 추가
+        document
+          .querySelector(".arrowM.leftM")
+          .addEventListener("click", prevSlide);
+        document
+          .querySelector(".arrowM.rightM")
+          .addEventListener("click", nextSlide);
       });
     </script>
   </head>
@@ -289,8 +322,8 @@
           <h2>마블 시리즈</h2>
         </div>
         <div class="marvelSlider">
-          <button class="arrow left" onclick="prevSlide()">&#10094;</button>
-          <div class="slide-container">
+          <button class="arrowM leftM" onclick="prevSlide()">&#10094;</button>
+          <div class="slide-containerM">
             <img
               src="./images/아이콘/마블/닥터스트레인지_아이콘.webp"
               class="slideM"
@@ -306,20 +339,410 @@
               class="slideM"
               alt="Slide 3"
             />
-            <img src="./images/메인/메인4.PNG" class="slideM" alt="Slide 4" />
-            <img src="./images/메인/메인5.PNG" class="slideM" alt="Slide 5" />
-            <img src="./images/메인/메인6.PNG" class="slideM" alt="Slide 6" />
-            <img src="./images/메인/메인7.PNG" class="slideM" alt="Slide 7" />
-            <img src="./images/메인/메인8.PNG" class="slideM" alt="Slide 8" />
+            <img
+              src="./images/아이콘/마블/시빌워_아이콘.webp"
+              class="slideM"
+              alt="Slide 4"
+            />
+            <img
+              src="./images/아이콘/마블/아이언맨_아이콘.webp"
+              class="slideM"
+              alt="Slide 5"
+            />
+            <img
+              src="./images/아이콘/마블/아이언맨2_아이콘.webp"
+              class="slideM"
+              alt="Slide 6"
+            />
+            <img
+              src="./images/아이콘/마블/아이언맨3_아이콘.webp"
+              class="slideM"
+              alt="Slide 7"
+            />
+            <img
+              src="./images/아이콘/마블/어벤져스_아이콘.webp"
+              class="slideM"
+              alt="Slide 8"
+            />
+            <img
+              src="./images/아이콘/마블/에이지오브울트론_아이콘.webp"
+              class="slideM"
+              alt="Slide 9"
+            />
+            <img
+              src="./images/아이콘/마블/인피니티워_아이콘.webp"
+              class="slideM"
+              alt="Slide 10"
+            />
+            <img
+              src="./images/아이콘/마블/엔드게임_아이콘.webp"
+              class="slideM"
+              alt="Slide 11"
+            />
+            <img
+              src="./images/아이콘/마블/캡틴아메리카_아이콘.webp"
+              class="slideM"
+              alt="Slide 12"
+            />
           </div>
-          <button class="arrow right" onclick="nextSlide()">&#10095;</button>
+          <button class="arrowM rightM" onclick="nextSlide()">&#10095;</button>
         </div>
       </div>
-      <div class="disney"></div>
-      <div class="starwars"></div>
-      <div class="pixar"></div>
-      <div class="star"></div>
-      <div class="national"></div>
+      <div class="disney">
+        <div class="category2">
+          <h2>스타워즈 시리즈</h2>
+        </div>
+        <div class="marvelSlider">
+          <button class="arrowM leftM" onclick="prevSlide()">&#10094;</button>
+          <div class="slide-containerM">
+            <img
+              src="./images/아이콘/마블/닥터스트레인지_아이콘.webp"
+              class="slideM"
+              alt="Slide 1"
+            />
+            <img
+              src="./images/아이콘/마블/로키_아이콘.webp"
+              class="slideM"
+              alt="Slide 2"
+            />
+            <img
+              src="./images/아이콘/마블/블랙위도우_아이콘.webp"
+              class="slideM"
+              alt="Slide 3"
+            />
+            <img
+              src="./images/아이콘/마블/시빌워_아이콘.webp"
+              class="slideM"
+              alt="Slide 4"
+            />
+            <img
+              src="./images/아이콘/마블/아이언맨_아이콘.webp"
+              class="slideM"
+              alt="Slide 5"
+            />
+            <img
+              src="./images/아이콘/마블/아이언맨2_아이콘.webp"
+              class="slideM"
+              alt="Slide 6"
+            />
+            <img
+              src="./images/아이콘/마블/아이언맨3_아이콘.webp"
+              class="slideM"
+              alt="Slide 7"
+            />
+            <img
+              src="./images/아이콘/마블/어벤져스_아이콘.webp"
+              class="slideM"
+              alt="Slide 8"
+            />
+            <img
+              src="./images/아이콘/마블/에이지오브울트론_아이콘.webp"
+              class="slideM"
+              alt="Slide 9"
+            />
+            <img
+              src="./images/아이콘/마블/인피니티워_아이콘.webp"
+              class="slideM"
+              alt="Slide 10"
+            />
+            <img
+              src="./images/아이콘/마블/엔드게임_아이콘.webp"
+              class="slideM"
+              alt="Slide 11"
+            />
+            <img
+              src="./images/아이콘/마블/캡틴아메리카_아이콘.webp"
+              class="slideM"
+              alt="Slide 12"
+            />
+          </div>
+          <button class="arrowM rightM" onclick="nextSlide()">&#10095;</button>
+        </div>
+      </div>
+      <div class="starwars">
+        <div class="category2">
+          <h2>디지니 시리즈</h2>
+        </div>
+        <div class="marvelSlider">
+          <button class="arrowM leftM" onclick="prevSlide()">&#10094;</button>
+          <div class="slide-containerM">
+            <img
+              src="./images/아이콘/마블/닥터스트레인지_아이콘.webp"
+              class="slideM"
+              alt="Slide 1"
+            />
+            <img
+              src="./images/아이콘/마블/로키_아이콘.webp"
+              class="slideM"
+              alt="Slide 2"
+            />
+            <img
+              src="./images/아이콘/마블/블랙위도우_아이콘.webp"
+              class="slideM"
+              alt="Slide 3"
+            />
+            <img
+              src="./images/아이콘/마블/시빌워_아이콘.webp"
+              class="slideM"
+              alt="Slide 4"
+            />
+            <img
+              src="./images/아이콘/마블/아이언맨_아이콘.webp"
+              class="slideM"
+              alt="Slide 5"
+            />
+            <img
+              src="./images/아이콘/마블/아이언맨2_아이콘.webp"
+              class="slideM"
+              alt="Slide 6"
+            />
+            <img
+              src="./images/아이콘/마블/아이언맨3_아이콘.webp"
+              class="slideM"
+              alt="Slide 7"
+            />
+            <img
+              src="./images/아이콘/마블/어벤져스_아이콘.webp"
+              class="slideM"
+              alt="Slide 8"
+            />
+            <img
+              src="./images/아이콘/마블/에이지오브울트론_아이콘.webp"
+              class="slideM"
+              alt="Slide 9"
+            />
+            <img
+              src="./images/아이콘/마블/인피니티워_아이콘.webp"
+              class="slideM"
+              alt="Slide 10"
+            />
+            <img
+              src="./images/아이콘/마블/엔드게임_아이콘.webp"
+              class="slideM"
+              alt="Slide 11"
+            />
+            <img
+              src="./images/아이콘/마블/캡틴아메리카_아이콘.webp"
+              class="slideM"
+              alt="Slide 12"
+            />
+          </div>
+          <button class="arrowM rightM" onclick="nextSlide()">&#10095;</button>
+        </div>
+      </div>
+      <div class="pixar">
+        <div class="category2">
+          <h2>픽사 시리즈</h2>
+        </div>
+        <div class="marvelSlider">
+          <button class="arrowM leftM" onclick="prevSlide()">&#10094;</button>
+          <div class="slide-containerM">
+            <img
+              src="./images/아이콘/마블/닥터스트레인지_아이콘.webp"
+              class="slideM"
+              alt="Slide 1"
+            />
+            <img
+              src="./images/아이콘/마블/로키_아이콘.webp"
+              class="slideM"
+              alt="Slide 2"
+            />
+            <img
+              src="./images/아이콘/마블/블랙위도우_아이콘.webp"
+              class="slideM"
+              alt="Slide 3"
+            />
+            <img
+              src="./images/아이콘/마블/시빌워_아이콘.webp"
+              class="slideM"
+              alt="Slide 4"
+            />
+            <img
+              src="./images/아이콘/마블/아이언맨_아이콘.webp"
+              class="slideM"
+              alt="Slide 5"
+            />
+            <img
+              src="./images/아이콘/마블/아이언맨2_아이콘.webp"
+              class="slideM"
+              alt="Slide 6"
+            />
+            <img
+              src="./images/아이콘/마블/아이언맨3_아이콘.webp"
+              class="slideM"
+              alt="Slide 7"
+            />
+            <img
+              src="./images/아이콘/마블/어벤져스_아이콘.webp"
+              class="slideM"
+              alt="Slide 8"
+            />
+            <img
+              src="./images/아이콘/마블/에이지오브울트론_아이콘.webp"
+              class="slideM"
+              alt="Slide 9"
+            />
+            <img
+              src="./images/아이콘/마블/인피니티워_아이콘.webp"
+              class="slideM"
+              alt="Slide 10"
+            />
+            <img
+              src="./images/아이콘/마블/엔드게임_아이콘.webp"
+              class="slideM"
+              alt="Slide 11"
+            />
+            <img
+              src="./images/아이콘/마블/캡틴아메리카_아이콘.webp"
+              class="slideM"
+              alt="Slide 12"
+            />
+          </div>
+          <button class="arrowM rightM" onclick="nextSlide()">&#10095;</button>
+        </div>
+      </div>
+      <div class="star">
+        <div class="category2">
+          <h2>내셔널 지오그래픽 시리즈</h2>
+        </div>
+        <div class="marvelSlider">
+          <button class="arrowM leftM" onclick="prevSlide()">&#10094;</button>
+          <div class="slide-containerM">
+            <img
+              src="./images/아이콘/마블/닥터스트레인지_아이콘.webp"
+              class="slideM"
+              alt="Slide 1"
+            />
+            <img
+              src="./images/아이콘/마블/로키_아이콘.webp"
+              class="slideM"
+              alt="Slide 2"
+            />
+            <img
+              src="./images/아이콘/마블/블랙위도우_아이콘.webp"
+              class="slideM"
+              alt="Slide 3"
+            />
+            <img
+              src="./images/아이콘/마블/시빌워_아이콘.webp"
+              class="slideM"
+              alt="Slide 4"
+            />
+            <img
+              src="./images/아이콘/마블/아이언맨_아이콘.webp"
+              class="slideM"
+              alt="Slide 5"
+            />
+            <img
+              src="./images/아이콘/마블/아이언맨2_아이콘.webp"
+              class="slideM"
+              alt="Slide 6"
+            />
+            <img
+              src="./images/아이콘/마블/아이언맨3_아이콘.webp"
+              class="slideM"
+              alt="Slide 7"
+            />
+            <img
+              src="./images/아이콘/마블/어벤져스_아이콘.webp"
+              class="slideM"
+              alt="Slide 8"
+            />
+            <img
+              src="./images/아이콘/마블/에이지오브울트론_아이콘.webp"
+              class="slideM"
+              alt="Slide 9"
+            />
+            <img
+              src="./images/아이콘/마블/인피니티워_아이콘.webp"
+              class="slideM"
+              alt="Slide 10"
+            />
+            <img
+              src="./images/아이콘/마블/엔드게임_아이콘.webp"
+              class="slideM"
+              alt="Slide 11"
+            />
+            <img
+              src="./images/아이콘/마블/캡틴아메리카_아이콘.webp"
+              class="slideM"
+              alt="Slide 12"
+            />
+          </div>
+          <button class="arrowM rightM" onclick="nextSlide()">&#10095;</button>
+        </div>
+      </div>
+      <div class="national">
+        <div class="category2">
+          <h2>스타 오리지널 시리즈</h2>
+        </div>
+        <div class="marvelSlider">
+          <button class="arrowM leftM" onclick="prevSlide()">&#10094;</button>
+          <div class="slide-containerM">
+            <img
+              src="./images/아이콘/마블/닥터스트레인지_아이콘.webp"
+              class="slideM"
+              alt="Slide 1"
+            />
+            <img
+              src="./images/아이콘/마블/로키_아이콘.webp"
+              class="slideM"
+              alt="Slide 2"
+            />
+            <img
+              src="./images/아이콘/마블/블랙위도우_아이콘.webp"
+              class="slideM"
+              alt="Slide 3"
+            />
+            <img
+              src="./images/아이콘/마블/시빌워_아이콘.webp"
+              class="slideM"
+              alt="Slide 4"
+            />
+            <img
+              src="./images/아이콘/마블/아이언맨_아이콘.webp"
+              class="slideM"
+              alt="Slide 5"
+            />
+            <img
+              src="./images/아이콘/마블/아이언맨2_아이콘.webp"
+              class="slideM"
+              alt="Slide 6"
+            />
+            <img
+              src="./images/아이콘/마블/아이언맨3_아이콘.webp"
+              class="slideM"
+              alt="Slide 7"
+            />
+            <img
+              src="./images/아이콘/마블/어벤져스_아이콘.webp"
+              class="slideM"
+              alt="Slide 8"
+            />
+            <img
+              src="./images/아이콘/마블/에이지오브울트론_아이콘.webp"
+              class="slideM"
+              alt="Slide 9"
+            />
+            <img
+              src="./images/아이콘/마블/인피니티워_아이콘.webp"
+              class="slideM"
+              alt="Slide 10"
+            />
+            <img
+              src="./images/아이콘/마블/엔드게임_아이콘.webp"
+              class="slideM"
+              alt="Slide 11"
+            />
+            <img
+              src="./images/아이콘/마블/캡틴아메리카_아이콘.webp"
+              class="slideM"
+              alt="Slide 12"
+            />
+          </div>
+          <button class="arrowM rightM" onclick="nextSlide()">&#10095;</button>
+        </div>
+      </div>
       <div class="footer"></div>
     </main>
   </body>
