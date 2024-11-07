@@ -56,60 +56,70 @@ i {
   margin-right: 10px; /* Add some space to the right of the image */
 }
 main {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(5);
+  gap: 10px;
+  grid-template-areas:
+    "nav"
+    "slider"
+    "category"
+    "marvle"
+    "disney"
+    "pixar"
+    "star"
+    "national"
+    "footer";
   justify-content: center;
   align-items: center;
 }
 .slider {
+  margin-top: 80px;
   position: relative;
-  width: 90vw;
-  margin-top: 72px;
-  display: flex;
+  width: 100vw;
 }
 
 .slide-container {
   display: flex;
   transition: transform 0.5s ease;
-}
-
-.slide:hover {
-  border: 2px solid white; /* 두께 2px, 스타일은 solid, 색상은 흰색 */
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3); /* 마우스 오버 시 그림자 강하게 */
-  transform: scale(1.05); /* 이미지를 약간 확대 */
+  margin-left: 50px;
 }
 
 .slide {
-  width: calc(100% - 10px);
-  height: auto; /* 이미지 비율에 맞춰 자동으로 높이 조정 */
-  border: 2px solid rgba(255, 255, 255, 0.5); /* 흰색 테두리, 약간 흐릿한 효과 */
-  border-radius: 8px; /* 이미지 모서리를 둥글게 만듬 */
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* 이미지에 그림자 추가 */
-  margin-right: 10px; /* 이미지들 사이에 간격 추가 */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* 이미지에 마우스를 올렸을 때 부드러운 효과 */
+  width: 95vw;
+  height: auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 1); /* 더 부드러운 음영 효과 */
+  border-radius: 25px;
+  padding: #001020 5px solid;
 }
 
 .arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 3em;
-  color: #333;
+  font-size: 2em;
+  color: white;
   background: none;
   border: none;
-  padding: 10px;
   cursor: pointer;
-  z-index: 10;
+  padding: 10px;
+  z-index: 1;
 }
 
 .left {
-  left: -70px;
+  left: 10px;
+}
+
+.right {
+  right: 10px;
 }
 .left:hover {
   color: white;
 }
-.right {
-  right: -70px;
-  color: white;
+.slide:hover {
+  border: 2px solid white; /* 두께 2px, 스타일은 solid, 색상은 흰색 */
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 1); /* 마우스 오버 시 그림자 강하게 */
+  /* transform: scale(1.05); 이미지를 약간 확대 */
 }
 
 .icons a {
@@ -156,4 +166,92 @@ main {
   transform: scaleX(1); /* hover 시 밑줄 확장 */
   transform-origin: bottom left; /* 밑줄이 왼쪽에서 오른쪽으로 확장되도록 */
   bottom: -10px;
+}
+.category {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px; /* 요소 간 간격을 추가 */
+  justify-items: center; /* 자식 요소를 가운데 정렬 */
+  align-items: center; /* 자식 요소를 수직으로 가운데 정렬 */
+  width: 100%;
+  padding: 50px 150px;
+  box-sizing: border-box;
+}
+
+.category1 {
+  min-width: 250px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(145deg, #201e3b, #03000a);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 50px rgba(0, 0, 0, 1); /* 기본 그림자 효과 추가 */
+}
+
+.category1 .background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1; /* 비디오가 이미지 뒤에 배치되도록 설정 */
+  opacity: 0; /* 기본 상태에서는 비디오가 보이지 않도록 설정 */
+  visibility: hidden; /* 비디오가 보이지 않을 때 완전히 숨김 */
+  transition: opacity 0.5s ease, visibility 0s 0.5s; /* opacity와 visibility 전환 */
+}
+
+.category1 .disney img {
+  position: relative;
+  z-index: 1; /* 이미지는 비디오 위에 표시되도록 설정 */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.category1:hover {
+  transform: scale(
+    1.05
+  ); /* hover 시 크기가 커지더라도 다른 요소에 영향을 주지 않도록 함 */
+}
+
+.category1:hover .background-video {
+  opacity: 1; /* hover 시 비디오가 보이도록 설정 */
+  visibility: visible; /* hover 시 비디오를 보이게 설정 */
+  transition: opacity 0.5s ease, visibility 0s 0s; /* opacity 전환과 visibility 전환 */
+}
+
+.category1:hover {
+  scale: 1.05;
+  border: 2px solid white;
+}
+.marble {
+  display: grid;
+}
+.starwars {
+  display: grid;
+}
+.pixar {
+  display: grid;
+}
+.star {
+  display: grid;
+}
+.national {
+  display: grid;
+}
+.footer {
+  display: grid;
+}
+
+source:hover {
+  opacity: 1;
+}
+.category2 {
+  margin-left: 50px;
 }
