@@ -179,7 +179,7 @@ main {
   border: none;
   cursor: pointer;
   padding: 10px;
-  z-index: 1;
+  z-index: 3;
 }
 
 .left {
@@ -420,7 +420,7 @@ source:hover {
   border: none;
   cursor: pointer;
   padding: 10px;
-  z-index: 1;
+  z-index: 3;
 }
 
 .leftM {
@@ -479,7 +479,7 @@ source:hover {
   border: none;
   cursor: pointer;
   padding: 10px;
-  z-index: 1;
+  z-index: 3;
 }
 
 .leftS {
@@ -530,7 +530,7 @@ source:hover {
   border: none;
   cursor: pointer;
   padding: 10px;
-  z-index: 1;
+  z-index: 3;
 }
 
 .leftD {
@@ -581,7 +581,7 @@ source:hover {
   border: none;
   cursor: pointer;
   padding: 10px;
-  z-index: 1;
+  z-index: 3;
 }
 
 .leftP {
@@ -632,7 +632,7 @@ source:hover {
   border: none;
   cursor: pointer;
   padding: 10px;
-  z-index: 1;
+  z-index: 3;
 }
 
 .leftN {
@@ -684,7 +684,7 @@ source:hover {
   border: none;
   cursor: pointer;
   padding: 10px;
-  z-index: 1;
+  z-index: 3;
 }
 
 .leftSO {
