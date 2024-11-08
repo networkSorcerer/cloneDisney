@@ -58,17 +58,18 @@ i {
 main {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(5);
+  grid-template-rows: repeat(10);
   gap: 10px;
   grid-template-areas:
     "nav"
     "slider"
     "category"
     "marvle"
+    "starwars"
     "disney"
     "pixar"
-    "star"
     "national"
+    "star"
     "footer";
   justify-content: center;
   align-items: center;
@@ -77,6 +78,7 @@ main {
   margin-top: 80px;
   position: relative;
   width: 100vw;
+  overflow: hidden;
 }
 
 .slide-container {
@@ -176,6 +178,7 @@ main {
   width: 100%;
   padding: 50px 150px;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .category1 {
@@ -191,6 +194,7 @@ main {
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 8px 50px rgba(0, 0, 0, 1); /* 기본 그림자 효과 추가 */
+  gap: 10px;
 }
 
 .category1 .background-video {
@@ -206,7 +210,7 @@ main {
   transition: opacity 0.5s ease, visibility 0s 0.5s; /* opacity와 visibility 전환 */
 }
 
-.category1 .disney img {
+.category1 img {
   position: relative;
   z-index: 1; /* 이미지는 비디오 위에 표시되도록 설정 */
   width: 100%;
@@ -218,6 +222,7 @@ main {
   transform: scale(
     1.05
   ); /* hover 시 크기가 커지더라도 다른 요소에 영향을 주지 않도록 함 */
+  transform-origin: center top;
 }
 
 .category1:hover .background-video {
@@ -232,6 +237,7 @@ main {
 }
 .marble {
   display: grid;
+  margin-top: 10px;
 }
 .starwars {
   display: grid;
@@ -256,7 +262,7 @@ source:hover {
   margin-left: 50px;
 }
 
-/* 마블 아이콘 */
+/* 마블 슬라이드 */
 .marvelSlider {
   position: relative;
   width: 100vw;
@@ -306,6 +312,267 @@ source:hover {
   /* transform: scale(1.05); 이미지를 약간 확대 */
 }
 
+/*스타워즈 슬라이드*/
+.sliderS {
+  position: relative;
+  width: 100vw;
+  margin-bottom: 50px;
+}
+
+.slide-containerS {
+  display: flex;
+  transition: transform 0.5s ease;
+  margin-left: 50px;
+}
+
+.slideS {
+  width: 300px;
+  height: auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 1);
+  border-radius: 25px;
+  padding: #001020 5px solid;
+}
+
+.arrowS {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1;
+}
+
+.leftS {
+  left: 10px;
+}
+
+.rightS {
+  right: 10px;
+}
+
+.leftS:hover {
+  color: white;
+}
+
+.slideS:hover {
+  border: 2px solid white;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 1);
+}
+
+/*디즈니 슬라이드*/
+.sliderD {
+  position: relative;
+  width: 100vw;
+  margin-bottom: 50px;
+}
+
+.slide-containerD {
+  display: flex;
+  transition: transform 0.5s ease;
+  margin-left: 50px;
+}
+
+.slideD {
+  width: 300px;
+  height: auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 1);
+  border-radius: 25px;
+  padding: #001020 5px solid;
+}
+
+.arrowD {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1;
+}
+
+.leftD {
+  left: 10px;
+}
+
+.rightD {
+  right: 10px;
+}
+
+.leftD:hover {
+  color: white;
+}
+
+.slideD:hover {
+  border: 2px solid white;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 1);
+}
+
+/*픽사 슬라이드*/
+.sliderP {
+  position: relative;
+  width: 100vw;
+  margin-bottom: 50px;
+}
+
+.slide-containerP {
+  display: flex;
+  transition: transform 0.5s ease;
+  margin-left: 50px;
+}
+
+.slideP {
+  width: 300px;
+  height: auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 1);
+  border-radius: 25px;
+  padding: #001020 5px solid;
+}
+
+.arrowP {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1;
+}
+
+.leftP {
+  left: 10px;
+}
+
+.rightP {
+  right: 10px;
+}
+
+.leftP:hover {
+  color: white;
+}
+
+.slideP:hover {
+  border: 2px solid white;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 1);
+}
+
+/*내셔널 슬라이드*/
+.sliderN {
+  position: relative;
+  width: 100vw;
+  margin-bottom: 50px;
+}
+
+.slide-containerN {
+  display: flex;
+  transition: transform 0.5s ease;
+  margin-left: 50px;
+}
+
+.slideN {
+  width: 300px;
+  height: auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 1);
+  border-radius: 25px;
+  padding: #001020 5px solid;
+}
+
+.arrowN {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1;
+}
+
+.leftN {
+  left: 10px;
+}
+
+.rightN {
+  right: 10px;
+}
+
+.leftN:hover {
+  color: white;
+}
+
+.slideN:hover {
+  border: 2px solid white;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 1);
+}
+
+/*스타 오리지널 슬라이드*/
+
+.sliderSO {
+  position: relative;
+  width: 100vw;
+  margin-bottom: 50px;
+}
+
+.slide-containerSO {
+  display: flex;
+  transition: transform 0.5s ease;
+  margin-left: 50px;
+}
+
+.slideSO {
+  width: 300px;
+  height: auto;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 1);
+  border-radius: 25px;
+  padding: #001020 5px solid;
+}
+
+.arrowSO {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1;
+}
+
+.leftSO {
+  left: 10px;
+}
+
+.rightSO {
+  right: 10px;
+}
+
+.leftSO:hover {
+  color: white;
+}
+
+.slideSO:hover {
+  border: 2px solid white;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 1);
+}
+
 .category2 h2 {
   margin-bottom: 10px; /* h2와 아래 div 사이의 간격을 10px로 설정 */
+}
+
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
 }
