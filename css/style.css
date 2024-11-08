@@ -26,8 +26,8 @@ main {
   margin-top: 0px;
   display: flex; /* Flexbox 컨테이너로 변경 */
   flex-wrap: wrap; /* 자식 요소들이 화면 크기에 따라 줄바꿈 할 수 있도록 설정 */
-  width: 580px;
-  height: 593px;
+  width: 30%;
+  height: 40%;
   border-radius: 20px;
   background-color: white;
   padding: 56px 72px;
