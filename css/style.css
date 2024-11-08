@@ -145,3 +145,31 @@ footer {
   color: gray;
   font-size: 14px;
 }
+
+/* Responsive styles for tablets */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .icons {
+    flex-wrap: wrap;
+  }
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .icons {
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .logo img {
+    width: 80%; /* Adjust logo size for smaller screens */
+  }
+}
